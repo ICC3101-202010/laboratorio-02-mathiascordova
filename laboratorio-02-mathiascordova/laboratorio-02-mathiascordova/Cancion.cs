@@ -24,5 +24,15 @@ namespace laboratorio_02_mathiascordova
         {
             return ("Genero: " + genero + ", Artista: " + artista + ", Album: " + album + ", Nombre: " + nombre);
         }
+
+        public List<string> Criterios()
+        {
+            List<string> crite = new List<string>();
+            crite.Add(nombre);
+            crite.Add(artista);
+            crite.Add(genero);
+            crite.Add(album);
+            return (crite);
+        }
     }
 }

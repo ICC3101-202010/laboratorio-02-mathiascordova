@@ -35,6 +35,7 @@ namespace laboratorio_02_mathiascordova
                 return true;
             }
         }
+
         public void VerCanciones()
         {
             int tamano = canciones.Count();
@@ -42,6 +43,85 @@ namespace laboratorio_02_mathiascordova
             {
                 Console.WriteLine(canciones[i].Informacion());
 
+            }
+        }
+
+        public List<Cancion> CancionesPorCriterio(string criterio, string valor)
+        {
+            List<Cancion> entrega = new List<Cancion>();
+            int tamano = canciones.Count();
+
+            if (criterio == "Nombre" || criterio == "nombre")
+            {
+                for (int i = 0; i < tamano; i++)
+                {
+                    List<string> crit = canciones[i].Criterios();
+                    if (crit[0] == valor)
+                    {
+                        entrega.Add(canciones[i]);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                return (entrega);
+            }
+            else if (criterio == "Artista" || criterio == "artista")
+            {
+                for (int i = 0; i < tamano; i++)
+                {
+                    List<string> crit = canciones[i].Criterios();
+                    if (crit[1] == valor)
+                    {
+                        entrega.Add(canciones[i]);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                return (entrega);
+
+            }
+            else if (criterio == "Genero" || criterio == "genero")
+            {
+                for (int i = 0; i < tamano; i++)
+                {
+                    List<string> crit = canciones[i].Criterios();
+                    if (crit[2] == valor)
+                    {
+                        entrega.Add(canciones[i]);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                return (entrega);
+
+            }
+            else if (criterio == "Nombre" || criterio == "nombre")
+            {
+                for (int i = 0; i < tamano; i++)
+                {
+                    List<string> crit = canciones[i].Criterios();
+                    if (crit[3] == valor)
+                    {
+                        entrega.Add(canciones[i]);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+                return (entrega);
+
+            }
+            else
+            {
+                Console.WriteLine("No existe el criterio: " + criterio);
+                return entrega;
             }
         }
     }

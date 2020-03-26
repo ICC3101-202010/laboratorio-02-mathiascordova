@@ -20,7 +20,9 @@ namespace laboratorio_02_mathiascordova
                 Console.WriteLine("Indicar el numero al que se quiere acceder:");
                 Console.WriteLine("1. Ver canciones");
                 Console.WriteLine("2. Agregar una cancion");
-                Console.WriteLine("3. Salir de Espotifai");
+                Console.WriteLine("3. Ver canciones por criterio");
+                Console.WriteLine("X. Salir de Espotifai");
+
                 seleccion = Console.ReadLine();
                 if (seleccion == "1")
                 {
@@ -31,7 +33,20 @@ namespace laboratorio_02_mathiascordova
                     Console.WriteLine("Escriba nombre, album, artista y genero (en ese orden)");
                     Console.WriteLine(spotify.AgregarCancion(new Cancion(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Console.ReadLine())));
                 }
-                else if (seleccion == "3")
+                if (seleccion == "3")
+                {
+                    Console.WriteLine("Ingrese el criterio (nombre, artista, album, genero):");
+                    string crit = Console.ReadLine();
+                    Console.WriteLine("Ingrese su busqueda:");
+                    string valor = Console.ReadLine();
+                    List<Cancion> filtro = spotify.CancionesPorCriterio(crit, valor);
+                    int tamano = filtro.Count();
+                    for (int i = 0; i < tamano; i++)
+                    {
+                        Console.WriteLine(filtro[i].Informacion());
+                    }
+                }
+                else if (seleccion == "X" || seleccion == "x")
                 {
                     Console.WriteLine("Hasta Pronto!");
                     break;
