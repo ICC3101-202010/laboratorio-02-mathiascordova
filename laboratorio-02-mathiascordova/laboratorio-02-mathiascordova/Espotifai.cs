@@ -9,6 +9,7 @@ namespace laboratorio_02_mathiascordova
     public class Espotifai
     {
         List<Cancion> canciones = new List<Cancion>();
+        List<Playlist> playlists = new List<Playlist>();
         public Espotifai()
         {
         }
@@ -123,6 +124,70 @@ namespace laboratorio_02_mathiascordova
                 Console.WriteLine("No existe el criterio: " + criterio);
                 return entrega;
             }
+        }
+        public bool GenerarPlaylist(string criterio, string valor, string nombre)
+        {
+            List<Cancion> ordenadas=CancionesPorCriterio(criterio, valor);
+            int tamano = playlists.Count();
+            int count = 0;
+            for (int i = 0; i < tamano; i++)
+            {
+                if (nombre == playlists[i].NombrePlaylist())
+                {
+                    count++;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            if (ordenadas.Count() == 0 && criterio!="Nombre" && criterio != "nombre" && criterio != "artista" && criterio != "Artista" && criterio != "Album" && criterio != "album" && criterio != "genero" && criterio != "Genero")
+            {
+                return false;
+            }
+            else if (ordenadas.Count()==0)
+            {
+                Console.WriteLine("No se encontraron canciones que cumplan este criterio");
+                return false;
+            }
+            else if (count!=0)
+            {
+                Console.WriteLine("Ya existe una playlist con este nombre!");
+                return false;
+            }
+            else
+            {
+                playlists.Add(new Playlist(nombre, ordenadas));
+                return true;
+            }
+
+
+
+        }
+        public string VerMisPlaylists()
+        {
+            int tamano = playlists.Count();
+            string entrega="";
+            if (tamano == 0)
+            {
+                return "";
+            }
+            else
+            {
+                for (int i = 0; i < tamano; i++)
+                {
+                    string nombre = playlists[i].NombrePlaylist();
+                    string datos = "";
+                    List<Cancion> canciones = playlists[i].RetornanCanciones();
+                    for (int a = 0; a < canciones.Count(); a++)
+                    {
+                        datos += canciones[a].Informacion() + Environment.NewLine;
+                    }
+                    entrega += nombre + ":" + Environment.NewLine + datos;
+                }
+                return entrega;
+            }
+            
         }
     }
 }

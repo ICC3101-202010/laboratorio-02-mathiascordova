@@ -21,6 +21,8 @@ namespace laboratorio_02_mathiascordova
                 Console.WriteLine("1. Ver canciones");
                 Console.WriteLine("2. Agregar una cancion");
                 Console.WriteLine("3. Ver canciones por criterio");
+                Console.WriteLine("4. Generar playlist");
+                Console.WriteLine("5. Ver mis Playlists");
                 Console.WriteLine("X. Salir de Espotifai");
 
                 seleccion = Console.ReadLine();
@@ -44,6 +46,27 @@ namespace laboratorio_02_mathiascordova
                     for (int i = 0; i < tamano; i++)
                     {
                         Console.WriteLine(filtro[i].Informacion());
+                    }
+                }
+                if (seleccion == "4")
+                {
+                    Console.WriteLine("Ingrese Criterio, Valor y Nombre de Playlist");
+                    string criterioplaylist = Console.ReadLine();
+                    string valorcriterio = Console.ReadLine();
+                    string nombreplaylist = Console.ReadLine();
+                    Console.WriteLine(spotify.GenerarPlaylist(criterioplaylist,valorcriterio,nombreplaylist));
+                }
+                if (seleccion == "5")
+                {
+                    if (spotify.VerMisPlaylists() == "")
+                    {
+                        Console.WriteLine("Usted no tiene playlists");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Mis Playlists:");
+                        Console.WriteLine("");
+                        Console.WriteLine(spotify.VerMisPlaylists());
                     }
                 }
                 else if (seleccion == "X" || seleccion == "x")
