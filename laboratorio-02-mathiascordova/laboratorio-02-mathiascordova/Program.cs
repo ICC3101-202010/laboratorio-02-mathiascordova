@@ -74,6 +74,10 @@ namespace laboratorio_02_mathiascordova
                     Console.WriteLine("Hasta Pronto!");
                     break;
                 }
+                else
+                {
+                    Console.WriteLine("Esa seleccion es invalida");
+                }
             }
 
         }

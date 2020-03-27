@@ -8,8 +8,8 @@ namespace laboratorio_02_mathiascordova
 {
     public class Espotifai
     {
-        List<Cancion> canciones = new List<Cancion>();
-        List<Playlist> playlists = new List<Playlist>();
+        private List<Cancion> canciones = new List<Cancion>();
+        private List<Playlist> playlists = new List<Playlist>();
         public Espotifai()
         {
         }
