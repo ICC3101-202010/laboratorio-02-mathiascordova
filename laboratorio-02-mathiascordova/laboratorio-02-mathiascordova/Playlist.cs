@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace laboratorio_02_mathiascordova
 {
-    public class Playlist
+    class Playlist
     {
         private string nombre;
         private List<Cancion> playlist = new List<Cancion>();

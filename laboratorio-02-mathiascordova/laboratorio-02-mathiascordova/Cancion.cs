@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace laboratorio_02_mathiascordova
 {
-    public class Cancion
+    class Cancion
     {
         private string nombre;
         private string album;

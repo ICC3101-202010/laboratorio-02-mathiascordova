@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace laboratorio_02_mathiascordova
 {
-    public class Espotifai
+    class Espotifai
     {
         private List<Cancion> canciones = new List<Cancion>();
         private List<Playlist> playlists = new List<Playlist>();
