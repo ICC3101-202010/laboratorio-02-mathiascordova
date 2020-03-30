@@ -69,12 +69,12 @@ namespace laboratorio_02_mathiascordova
                         Console.WriteLine(spotify.VerMisPlaylists());
                     }
                 }
-                else if (seleccion == "X" || seleccion == "x")
+                if (seleccion == "X" || seleccion == "x")
                 {
                     Console.WriteLine("Hasta Pronto!");
                     break;
                 }
-                else
+                else if (seleccion!="1" && seleccion!="2" && seleccion != "3" && seleccion != "4" && seleccion != "5" && seleccion != "x" && seleccion != "X")
                 {
                     Console.WriteLine("Esa seleccion es invalida");
                 }

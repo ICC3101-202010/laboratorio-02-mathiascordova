@@ -102,7 +102,7 @@ namespace laboratorio_02_mathiascordova
                 return (entrega);
 
             }
-            else if (criterio == "Nombre" || criterio == "nombre")
+            else if (criterio == "Album" || criterio == "album")
             {
                 for (int i = 0; i < tamano; i++)
                 {
